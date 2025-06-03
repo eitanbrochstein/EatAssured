@@ -1,2 +1,21 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/forms';
+@plugin "@tailwindcss/forms";
+
+@theme {
+    --font-merienda: 'Merienda', sans-serif;
+}
+
+@layer utilities {
+    .mobile-polygon {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 1.25rem 100%);
+    }
+    .bar-open-1 {
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+    .bar-open-3 {
+        transform: translate(0, -11px)  rotate(45deg);
+    }
+    .bar-open-2 {
+        opacity: 0;
+    }
+}
