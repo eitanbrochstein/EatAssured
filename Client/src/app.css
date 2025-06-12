@@ -3,6 +3,8 @@
 
 @theme {
     --font-merienda: 'Merienda', sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
+    --color-mint: #adebb3;
 }
 
 @layer utilities {
@@ -13,7 +15,7 @@
         transform: translate(0, 11px) rotate(-45deg);
     }
     .bar-open-3 {
-        transform: translate(0, -11px)  rotate(45deg);
+        transform: translate(0, -11px) rotate(45deg);
     }
     .bar-open-2 {
         opacity: 0;
