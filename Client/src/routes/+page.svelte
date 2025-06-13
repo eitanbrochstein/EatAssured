@@ -47,7 +47,7 @@
 
 <main>
     <Navbar></Navbar>
-    <section class="flex h-[100vh] flex-col items-center justify-center bg-cover bg-no-repeat p-12 overflow-hidden" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(0,0,0,0.7)), url(/images/frontbg.png); background-position: center;">
+    <section class="flex h-[100vh] flex-col items-center justify-center overflow-hidden bg-cover bg-no-repeat p-12" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(0,0,0,0.7)), url(/images/frontbg.png); background-position: center;">
         <div class="mb-2 flex items-center space-x-4">
             <img src="/images/favicon.png" class="pb-full w-[6rem] max-sm:w-[4rem]" alt="Logo" />
             <h1 class="font-merienda text-center text-[3rem] tracking-wide text-white uppercase max-sm:text-[1.7rem]">Eat <b>Assured</b></h1>
@@ -59,17 +59,17 @@
             <a href="/download/apple" class="font-merienda block w-[11rem] rounded-4xl bg-black px-6 py-4 text-center text-2xl text-white shadow-white transition-all duration-500 hover:translate-y-[-4px] hover:bg-white hover:text-black hover:shadow-md"><i class="fa-brands fa-apple"></i> Apple</a>
         </div>
     </section>
-    <section class="flex flex-col bg-slate-50 sm:px-12 py-20 overflow-hidden">
+    <section class="flex flex-col overflow-hidden bg-slate-50 py-20 sm:px-12">
         <h1 class="text-mint font-merienda mb-6 w-full text-center text-6xl uppercase text-shadow-md">About Us</h1>
-        <h2 class="font-merienda mb-6 w-full text-center text-3xl max-sm:p-4 text-shadow-md">Simple, Useful, and 100% Free Tool</h2>
+        <h2 class="font-merienda mb-6 w-full text-center text-3xl text-shadow-md max-sm:p-4">Simple, Useful, and 100% Free Tool</h2>
         <div class="flex items-center justify-around max-lg:flex-wrap max-lg:space-y-6 lg:space-x-6">
-            <div class="w-[30rem] max-lg:w-full flex flex-col justify-center items-center">
+            <div class="flex w-[30rem] flex-col items-center justify-center max-lg:w-full">
                 <p class="font-merienda w-full text-center text-[1.2rem] max-sm:p-4">Eat Assured is a fast, and simple tool designed to help people with specific allergies to find the safety of the products they're buying. One simple scan, and Eat Assured provides a descriptive layout and description, along with a percentage of the food's rating based on your allergy.<br /><br /> Now you might be thinking, why not just check the ingredients it gives on the box? For some products, you don't need to do that much research into what it has. Some other products, however, may not be clear about whether something is safe for your allergy. An example may be that someone with a gluten allergy finds a product that doesn't label any gluten on their product, but no certificate saying it's gluten-free either.<br /><br /> This sometimes leads the person to read articles on the product to find their answer, and many sources will have mixed answers depending on the source. Eat Assured removes the annoyance of doing all this research, and gives you one quick answer to tell you the most accurate answer of if it's safe or not.</p>
-                <a href="/mission" class="font-merienda mt-4 p-4 bg-mint rounded-full text-white text-2xl text-shadow-none hover:shadow-md shadow-green-600 duration-300 transition-all hover:bg-green-600 hover:scale-105 active:scale-95">Read Our Mission ></a>
+                <a href="/mission" class="font-merienda bg-mint mt-4 rounded-full p-4 text-2xl text-white shadow-green-600 transition-all duration-300 text-shadow-none hover:scale-105 hover:bg-green-600 hover:shadow-md active:scale-95">Read Our Mission ></a>
             </div>
-            <div class="flex sm:w-[40rem] max-sm:w-full flex-col items-center sm:rounded-[1.5rem] bg-gray-200 p-4">
-                <div id="about-outer-circle" class="mb-8 flex aspect-square sm:w-[30rem] max-sm:w-[20rem] items-center justify-center rounded-full bg-slate-200">
-                    <div id="about-inner-circle" class="flex aspect-square sm:w-[calc(30rem-50px)] max-sm:w-[calc(20rem-50px)] items-center justify-center rounded-full bg-white bg-cover" style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(/images/cheerios.jpg)">
+            <div class="flex flex-col items-center bg-gray-200 p-4 max-sm:w-full sm:w-[40rem] sm:rounded-[1.5rem]">
+                <div id="about-outer-circle" class="mb-8 flex aspect-square items-center justify-center rounded-full bg-slate-200 max-sm:w-[20rem] sm:w-[30rem]">
+                    <div id="about-inner-circle" class="flex aspect-square items-center justify-center rounded-full bg-white bg-cover max-sm:w-[calc(20rem-50px)] sm:w-[calc(30rem-50px)]" style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url(/images/cheerios.jpg)">
                         <h2 class="font-merienda text-[3rem] text-green-600">75%</h2>
                     </div>
                 </div>
@@ -79,27 +79,33 @@
             </div>
         </div>
     </section>
-    <section class="flex flex-col bg-slate-50 sm:px-12 py-20">
+    <section class="flex flex-col bg-slate-50 py-20 sm:px-12">
         <h1 class="text-mint font-merienda mb-6 w-full text-center text-6xl uppercase">Eat Assured+</h1>
-        <h2 class="font-merienda mb-6 w-full text-center text-3xl max-sm:p-4 text-shadow-md">Our other great products for just $3/month!</h2>
-        <div class="flex">
-            <div>
-                <h1>General Healthy Meal Planner</h1>
+        <h2 class="font-merienda mb-6 w-full text-center text-3xl text-shadow-md max-sm:p-4">Our other great products for just $3/month!</h2>
+        <div class="flex w-full flex-wrap items-center justify-center space-y-4">
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/health.svg" class="aspect-square w-[10rem]" alt="Health Logo" />
+                <h1 class="font-merienda text-center">General Healthy Meal Planner</h1>
             </div>
-            <div>
-                <h1>Recommended Grocery Items & Auto Generation</h1>
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/grocery.svg" class="aspect-square w-[10rem]" alt="Grocery Logo" />
+                <h1 class="font-merienda text-center">Recommended Grocery Items & Auto Generation</h1>
             </div>
-            <div>
-                <h1>Advanced Travel Food Planning</h1>
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/travel.svg" class="aspect-square w-[10rem]" alt="Travel Logo" />
+                <h1 class="font-merienda text-center">Advanced Travel Food Planning</h1>
             </div>
-            <div>
-                <h1>Plate Version Analysis</h1>
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/plate.svg" class="aspect-square w-[10rem]" alt="Plate Logo" />
+                <h1 class="font-merienda text-center">Plate Version Analysis</h1>
             </div>
-            <div>
-                <h1>Predictive Food Recommendations</h1>
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/recommend.svg" class="aspect-square w-[10rem]" alt="Recommend Logo" />
+                <h1 class="font-merienda text-center">Predictive Food Recommendations</h1>
             </div>
-            <div>
-                <h1>Private Community Groups</h1>
+            <div class="flex w-[33.3%] flex-col items-center justify-center">
+                <img src="/images/services/community.svg" class="aspect-square w-[10rem]" alt="Community Logo" />
+                <h1 class="font-merienda text-center">Private Community Groups</h1>
             </div>
         </div>
     </section>
