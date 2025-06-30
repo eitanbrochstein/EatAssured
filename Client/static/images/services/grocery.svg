@@ -9,8 +9,9 @@
 fill="url('#MyGradient')" stroke="none">
 <defs>
     <linearGradient id="MyGradient" y2="1">
-        <stop offset="0%" stop-color="green"></stop>
-        <stop offset="50%" stop-color="#adebb3"></stop>
+        <stop offset="0%" stop-color="darkred"></stop>
+        <stop offset="33.33%" stop-color="purple"></stop>
+        <stop offset="66.66%" stop-color="orange"></stop>
     </linearGradient>
 </defs>
 <path d="M1753 1856 c-29 -24 -38 -26 -130 -26 l-100 0 -44 -47 c-24 -27 -84

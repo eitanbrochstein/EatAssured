@@ -57,7 +57,7 @@
     });
 </script>
 
-<main id="nav" class="absolute top-0 left-0 flex h-[8rem] w-full items-center px-8 max-md:px-0 max-md:pl-4 md:bg-white">
+<main id="nav" class="absolute top-0 left-0 z-10 flex h-[8rem] w-full items-center px-8 max-md:px-0 max-md:pl-4 md:bg-white">
     <div class="mr-auto flex h-full items-center">
         <a href="/" class="mr-6 h-full">
             <img src="/images/iconwhite.png" alt="Logo" class="h-full w-[8rem]" id="nav-logo" />
