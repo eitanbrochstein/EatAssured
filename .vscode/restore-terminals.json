@@ -1,0 +1,20 @@
+{
+    "terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "client",
+                    "commands": ["cd Client", "deno run dev"]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "server",
+                    "commands": ["cd Server", "deno run dev"]
+                }
+            ]
+        }
+    ]
+}

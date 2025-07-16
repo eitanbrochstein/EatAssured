@@ -1,9 +1,7 @@
-import { Hono } from 'hono'
-import * as firebase from "firebase/app"
+import * as firebase from "firebase/app";
+import {getAuth} from "firebase/auth";
+import {getFirestore} from "firebase/firestore";
 
-const app = new Hono()
-
-const clientHost = "http://127.0.0.1:5173"
 const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyC_OAnbHinS2YBlulomuQpj9Jia5uOYvW4",
     authDomain: "eatassured-50fbd.firebaseapp.com",
@@ -14,12 +12,7 @@ const firebaseApp = firebase.initializeApp({
     measurementId: "G-DFLGHZQKRS"
 }, "eatassured");
 
-app.get('/', (c) => {
-  return c.text("Hello world!")
-})
+export const auth = getAuth(firebaseApp);
+export const db = getFirestore(firebaseApp);
 
-app.get("/user/create", async (c) => {
-  return c.redirect(clientHost);
-})
-
-Deno.serve(app.fetch)
+export default firebaseApp;

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import {isLoggedIn, currentUser} from "../authStore";
 
     interface NavItem {
         href: string;
@@ -71,7 +72,13 @@
         </div>
     </div>
     <div class="ml-auto flex h-full items-center justify-center space-x-4">
-        <a href="/login" id="login" class="font-merienda rounded-[2rem] bg-black px-6 py-3 text-center text-2xl text-white shadow-black/50 transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg max-lg:text-xl max-sm:hidden">Log In</a>
+        <a href="/login" id="login" class="font-merienda rounded-[2rem] bg-black px-6 py-3 text-center text-2xl text-white shadow-black/50 transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg max-lg:text-xl max-sm:hidden">
+            {#if $isLoggedIn}
+                Log Out
+            {:else}
+                Log In
+            {/if}
+        </a>
         <a href="/signup" id="signup" class="font-merienda rounded-[2rem] bg-[#ADEBB3] px-6 py-3 text-center text-2xl text-white transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg max-lg:text-xl max-sm:hidden">Sign Up</a>
         <!-- svelte-ignore a11y_consider_explicit_label -->
         <button id="mobile-nav" class="mobile-polygon ml-4 hidden h-full w-[7rem] items-center justify-center bg-slate-200 text-4xl max-md:flex">
@@ -91,7 +98,9 @@
             {/each}
         </div>
         <div class="relative flex flex-col space-y-4">
-            <a href="/login" id="login" class="font-merienda rounded-[2rem] bg-black px-6 py-3 text-center text-3xl text-white shadow-black/50 transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg sm:hidden">Log In</a>
+            <a href="/login" id="login" class="font-merienda rounded-[2rem] bg-black px-6 py-3 text-center text-3xl text-white shadow-black/50 transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg sm:hidden">
+                Log In
+            </a>
             <a href="/signup" id="signup" class="font-merienda bg-mint rounded-[2rem] px-6 py-3 text-center text-3xl text-white transition-all hover:translate-y-[-0.25rem] hover:shadow-md active:translate-y-[0.1rem] active:shadow-lg sm:hidden">Sign Up</a>
         </div>
     </div>

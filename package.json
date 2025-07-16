@@ -3,6 +3,7 @@
     "jquery": "^3.7.1"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.32"
+    "@types/jquery": "^3.5.32",
+    "firebase": "^11.10.0"
   }
 }
