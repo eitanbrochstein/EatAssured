@@ -17,10 +17,16 @@
         try {
             const userCred = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCred.user;
-            await setDoc(doc(db, "users", user.uid), {
-                username: username,
-                email: user.email,
-                createdAt: new Date().toISOString()
+            await fetch("http://localhost:8000/user/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    username: username,
+                    uid: user.uid
+                })
             })
             goto("/")
         } catch (e: any) {

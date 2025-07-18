@@ -1,0 +1,8 @@
+POST http://localhost:8000/user/create
+Content-Type: application/json
+
+{
+    "email": "eitantravels25@gmail.com",
+    "username": "25ejsb",
+    "uid": "53635nm34j5n34ujo5435uo34"
+}

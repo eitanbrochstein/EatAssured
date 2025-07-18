@@ -1,25 +1,47 @@
-import { Hono } from 'hono'
-import * as firebase from "firebase/app"
+import { Hono } from "hono";
+import { initializeApp, cert } from "firebase-admin/app";
+import firebase from "firebase-admin";
+import { getFirestore } from "firebase-admin/firestore";
 
-const app = new Hono()
+const app = new Hono();
 
-const clientHost = "http://127.0.0.1:5173"
-const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyC_OAnbHinS2YBlulomuQpj9Jia5uOYvW4",
-    authDomain: "eatassured-50fbd.firebaseapp.com",
-    projectId: "eatassured-50fbd",
-    storageBucket: "eatassured-50fbd.firebasestorage.app",
-    messagingSenderId: "143193664243",
-    appId: "1:143193664243:web:8d8ef44e1f08cbec6fa586",
-    measurementId: "G-DFLGHZQKRS"
-}, "eatassured");
+import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { log } from "node:console";
+await config({ export: true });
 
-app.get('/', (c) => {
-  return c.text("Hello world!")
-})
+interface UserParse {
+  username: string;
+  email: string;
+  uid: string;
+}
 
-app.get("/user/create", async (c) => {
-  return c.redirect(clientHost);
-})
+const clientHost = "http://127.0.0.1:5173";
 
-Deno.serve(app.fetch)
+const firebaseApp = initializeApp({
+  credential: cert("./eatassured-50fbd-firebase-adminsdk-fbsvc-3ba31069a7.json")
+});
+
+const db = getFirestore(firebaseApp);
+
+app.get("/", (c) => {
+  return c.text("Hello world!");
+});
+
+app.post("/user/create", async (c) => {
+  console.log("Hello?");
+  try {
+    const { uid, username, email } = await c.req.json<UserParse>();
+    const user = await db.collection("users").doc(uid).set({
+        username: username,
+        email: email,
+        createdAt: new Date().toISOString(),
+    });
+    c.status(201);
+    return c.json({ Status: "OK" });
+  } catch (e) {
+    console.error(e);
+    c.status(500);
+    return c.json({ Status: "Error", Error: e });
+  }
+});
+Deno.serve(app.fetch);
